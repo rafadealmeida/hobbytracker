@@ -1,0 +1,50 @@
+:root {
+  --background: #121212;
+  --background-input: #3f3f3f;
+  --text-primary: #E0E0E0;
+  --text-secondary: #B0B0B0;
+  --accent: #cccccc;
+  --button: #03DAC5;
+}
+
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+}
+
+.button {
+  background-color: var(--button);
+  color: var(--text-primary);
+}
+
+table, tbody,thead, tr, th, td {
+  color: var(--accent) !important;
+}
+
+input, textarea {
+  background-color: var(--background-input) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--text-secondary);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav{
+
+  
+}

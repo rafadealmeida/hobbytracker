@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Tracker</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+<body>
+    <div class="container mt-5">
+        <form method="POST" action="/cadastra">
+            <p class="h2">Faça seu Cadastro</p>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Nome</label>
+                <input id="form2Example1" name="nome" class="form-control" />
+            </div>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Email</label>
+                <input id="form2Example1" name="email" class="form-control" />
+            </div>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="form2Example3">Senha</label>
+                <input type="password" id="form2Example2" name="senha" class="form-control" />
+            </div>
+           
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                class="btn btn-primary btn-block mb-4">Registrar</button>
+           
+        </form>
+    </div>
+</body>
+</html>

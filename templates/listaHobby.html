@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <title>Hobby Tracker</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">Hobby Tracker</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cadatraHobby">Cadastra Hobby</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/hobby">Lista de Hobbys</a>
+          </li>
+        </ul>
+      </div>
+      <div>  <a href="/logout" class="btn btn-secondary">
+        Sair
+    </a></div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2>Adicionar Novo Hobby</h2>
+    <form method="POST" action="/cadastraHobby">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome do Hobby</label>
+            <input type="text" class="form-control" id="hobby-nome" name="nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo do Hobby</label>
+          <input type="text" class="form-control" id="hobbytipo" name="tipo" required>
+      </div>
+        <button type="submit" class="btn btn-primary">Adicionar Hobby</button>
+    </form>
+
+    <h2 class="mt-5" id="title_hooby">Lista de Hobbies</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hobby in hobby %}
+            <tr>
+                <td>{{ hobby.id }}</td>
+                <td>{{ hobby.nome }}</td>
+                <td>{{ hobby.tipo }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2" class="text-center">Nenhum hobby encontrado.</td>
+                <td colspan="2" class="text-center"></td>
+                <td colspan="2" class="text-center"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+</body>
+
+
+
+</html>
